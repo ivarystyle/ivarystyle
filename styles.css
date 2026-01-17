@@ -1,90 +1,82 @@
-/* ===========================
-   BODY Y TIPOGRAFÍA
-=========================== */
+/* Body y tipografía */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
-  background: linear-gradient(145deg, #fff0f5, #fffaf0);
-  color: #3a2c2c;
+  background: linear-gradient(135deg, #ffe6f0, #fff0e6);
+  color: #4a3c31;
   overflow-x: hidden;
+  transition: background 0.5s ease;
 }
 
-/* ===========================
-   HEADER
-=========================== */
+/* Header con animación */
 header {
   background: linear-gradient(135deg, #d94f85, #c71585);
   color: white;
   text-align: center;
-  padding: 3rem 1rem;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  box-shadow: 0 10px 25px rgba(199, 21, 133, 0.3);
+  padding: 2.5rem 1rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  animation: headerSlide 1s ease;
+}
+@keyframes headerSlide {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
 header h1 {
   margin: 0;
-  font-size: 3rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  font-size: 2.8rem;
+  font-weight: 700;
 }
 
 header p {
-  margin: 10px 0 0 0;
+  margin: 5px 0 0 0;
   font-style: italic;
-  font-size: 1.3rem;
-  opacity: 0.9;
+  font-size: 1.2rem;
 }
 
-/* ===========================
-   CATEGORÍAS
-=========================== */
+/* Categorías */
 .categorias {
   display: flex;
   justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
-  margin: 2.5rem 0;
+  margin: 2rem 0;
 }
 
 .categoria {
   background-color: #fff0f3;
-  padding: 10px 22px;
+  padding: 8px 18px;
   border-radius: 50px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 3px 10px rgba(199,21,133,0.15);
 }
-
-.categoria.active,
-.categoria:hover {
-  background: #c71585;
-  color: white;
+.categoria.active, .categoria:hover {
   transform: scale(1.1);
-  box-shadow: 0 8px 25px rgba(199,21,133,0.25);
+  background-color: #d94f85;
+  color: white;
+  box-shadow: 0 5px 20px rgba(217,79,133,0.3);
 }
 
-/* ===========================
-   PRODUCTOS
-=========================== */
+/* Productos */
 .productos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2.5rem;
-  padding: 2.5rem;
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .producto {
-  background: linear-gradient(145deg, #fff0f5, #ffe6f0);
-  border-radius: 20px;
+  position: relative;
+  background: linear-gradient(145deg, #fff0f3, #ffe6ef);
+  border-radius: 15px;
   padding: 1.5rem;
-  width: 240px;
+  width: 220px;
   box-shadow: 0 10px 25px rgba(199, 21, 133, 0.2);
   text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
   transform: translateY(30px);
 }
@@ -101,162 +93,119 @@ header p {
 
 .producto img {
   width: 100%;
-  border-radius: 15px;
-  transition: transform 0.4s ease;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
 }
-
 .producto:hover img {
-  transform: scale(1.12);
+  transform: scale(1.15) rotate(-2deg);
 }
 
 .producto strong {
   display: block;
-  margin: 12px 0 8px 0;
+  margin: 10px 0 5px 0;
   color: #d94f85;
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .producto p {
   font-size: 0.95rem;
-  line-height: 1.5;
-  color: #5a3a3a;
+  line-height: 1.4;
+  margin: 0;
 }
 
-/* ===========================
-   BOTONES WHATSAPP
-=========================== */
+/* Badge */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff416c;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Botón de WhatsApp */
 a.whatsapp {
   background-color: #25D366;
   color: white;
-  padding: 12px 25px;
+  padding: 10px 20px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
-  margin-top: 12px;
+  margin-top: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
-
 a.whatsapp:hover {
-  transform: translateY(-3px) scale(1.05);
+  transform: translateY(-4px) scale(1.05);
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* ===========================
-   BOTONES DE CONTACTO
-=========================== */
+/* Contact buttons */
 .contact-buttons {
   text-align: center;
-  margin: 70px 0 50px 0;
+  margin: 60px 0 40px 0;
 }
-
 .contact-buttons a {
   padding: 12px 25px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   color: white;
-  margin: 6px;
+  margin: 5px;
   display: inline-block;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
-
 .contact-buttons a:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(199,21,133,0.2);
+  transform: scale(1.1) rotate(-2deg);
 }
-
 .instagram {
   background-color: #E1306C;
 }
 
-/* ===========================
-   FOOTER
-=========================== */
+/* Footer */
 footer {
   text-align: center;
-  padding: 2rem;
+  padding: 1.5rem;
   background: linear-gradient(135deg, #c71585, #d94f85);
   color: white;
   margin-top: 3rem;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  box-shadow: 0 -10px 25px rgba(199,21,133,0.2);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
-/* ===========================
-   CARRITO FLOTANTE
-=========================== */
+/* Carrito flotante */
 #carrito {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  width: 320px;
-  max-height: 450px;
+  width: 300px;
+  max-height: 400px;
   background: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 35px rgba(199, 21, 133, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(199, 21, 133, 0.3);
   overflow-y: auto;
-  padding: 20px;
+  padding: 15px;
   display: none;
   flex-direction: column;
   z-index: 999;
 }
+#carrito h3 { margin-top:0; text-align:center; color:#d94f85; }
+#carrito ul { list-style:none; padding:0; margin:0; }
+#carrito li { display:flex; justify-content:space-between; margin:10px 0; }
+#carrito .total { font-weight:bold; text-align:right; margin-top:10px; color:#d94f85; }
+#carrito button { margin-top:10px; background-color:#25D366; color:white; padding:10px; border:none; border-radius:50px; cursor:pointer; font-weight:600; width:100%; transition:all 0.3s ease; }
+#carrito button:hover { transform:translateY(-2px); box-shadow:0 5px 15px rgba(0,0,0,0.3); }
 
-#carrito h3 {
-  margin-top: 0;
-  text-align: center;
-  color: #d94f85;
-  font-size: 1.5rem;
-}
-
-#carrito ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#carrito li {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-  font-size: 0.95rem;
-}
-
-#carrito .total {
-  font-weight: bold;
-  text-align: right;
-  margin-top: 12px;
-  color: #d94f85;
-  font-size: 1.1rem;
-}
-
-#carrito button {
-  margin-top: 12px;
-  background-color: #25D366;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  font-weight: 600;
-  width: 100%;
-  transition: all 0.3s ease;
-}
-
-#carrito button:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-}
-
-/* ===========================
-   MEDIA QUERIES
-=========================== */
+/* Responsive */
 @media(max-width:480px){
-  header h1{font-size:2rem;}
+  header h1{font-size:1.8rem;}
   header p{font-size:1rem;}
-  #carrito {width: 90%;}
-  .producto {width: 90%;}
+  #carrito {width:90%;}
+  .producto {width:45%;}
 }

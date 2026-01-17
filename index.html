@@ -95,7 +95,6 @@
       box-shadow: 0 15px 35px rgba(199, 21, 133, 0.3);
     }
 
-    /* Imagen del producto */
     .producto img {
       width: 100%;
       border-radius: 12px;
@@ -106,7 +105,6 @@
       transform: scale(1.1);
     }
 
-    /* Nombre del producto */
     .producto strong {
       display: block;
       margin: 10px 0 5px 0;
@@ -114,14 +112,13 @@
       font-size: 1.2rem;
     }
 
-    /* Descripción del producto */
     .producto p {
       font-size: 0.95rem;
       line-height: 1.4;
       margin: 0;
     }
 
-    /* Botón de WhatsApp */
+    /* Botón de WhatsApp para agregar al carrito */
     a.whatsapp {
       background-color: #25D366;
       color: white;
@@ -133,6 +130,7 @@
       margin-top: 10px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       transition: all 0.3s ease;
+      cursor: pointer;
     }
 
     a.whatsapp:hover {
@@ -165,7 +163,6 @@
       background-color: #E1306C;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 1.5rem;
@@ -176,103 +173,192 @@
       border-top-right-radius: 15px;
     }
 
+    /* Carrito flotante */
+    #carrito {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 300px;
+      max-height: 400px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(199, 21, 133, 0.3);
+      overflow-y: auto;
+      padding: 15px;
+      display: none;
+      flex-direction: column;
+      z-index: 999;
+    }
+
+    #carrito h3 {
+      margin-top: 0;
+      text-align: center;
+      color: #d94f85;
+    }
+
+    #carrito ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #carrito li {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+
+    #carrito .total {
+      font-weight: bold;
+      text-align: right;
+      margin-top: 10px;
+      color: #d94f85;
+    }
+
+    #carrito button {
+      margin-top: 10px;
+      background-color: #25D366;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    #carrito button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
     @media(max-width:480px){
       header h1{font-size:1.8rem;}
       header p{font-size:1rem;}
+      #carrito {width: 90%;}
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Bienvenido a nuestro catálogo de maquillaje</h1>
-    <p>Descubre nuestros productos para resaltar tu belleza</p>
-  </header>
+<header>
+  <h1>Bienvenido a nuestro catálogo de maquillaje</h1>
+  <p>Descubre nuestros productos para resaltar tu belleza</p>
+</header>
 
-  <!-- Sección de categorías -->
-  <div class="categorias">
-    <div class="categoria" data-categoria="labiales">Labiales</div>
-    <div class="categoria" data-categoria="sombras">Sombras</div>
-    <div class="categoria" data-categoria="bases">Bases</div>
-    <div class="categoria" data-categoria="todas">Todas</div>
+<div class="categorias">
+  <div class="categoria" data-categoria="labiales">Labiales</div>
+  <div class="categoria" data-categoria="sombras">Sombras</div>
+  <div class="categoria" data-categoria="bases">Bases</div>
+  <div class="categoria" data-categoria="todas">Todas</div>
+</div>
+
+<div class="productos">
+  <div class="producto labiales" data-nombre="Labial Líquido Nude" data-precio="25">
+    <img src="labial.jpg" alt="Labial Líquido Nude">
+    <strong>Labial Líquido Nude</strong>
+    <p>Acabado mate, color duradero y suave para todos los tonos de piel.</p>
+    <a class="whatsapp">Agregar al carrito</a>
   </div>
 
-  <!-- Productos -->
-  <div class="productos">
-
-    <div class="producto labiales" data-nombre="Labial Líquido Nude">
-      <img src="labial.jpg" alt="Labial Líquido Nude">
-      <strong>Labial Líquido Nude</strong>
-      <p>Acabado mate, color duradero y suave para todos los tonos de piel.</p>
-      <a href="#" class="whatsapp">Comprar por WhatsApp</a>
-    </div>
-
-    <div class="producto sombras" data-nombre="Paleta de Sombras Brillantes">
-      <img src="sombras.jpg" alt="Paleta de Sombras Brillantes">
-      <strong>Paleta de Sombras Brillantes</strong>
-      <p>12 tonos intensos para crear looks únicos, desde natural hasta glam.</p>
-      <a href="#" class="whatsapp">Comprar por WhatsApp</a>
-    </div>
-
-    <div class="producto bases" data-nombre="Base Líquida Natural">
-      <img src="base.jpg" alt="Base Líquida Natural">
-      <strong>Base Líquida Natural</strong>
-      <p>Textura ligera que cubre imperfecciones y unifica el tono de piel.</p>
-      <a href="#" class="whatsapp">Comprar por WhatsApp</a>
-    </div>
-
-    <!-- Agrega más productos aquí -->
+  <div class="producto sombras" data-nombre="Paleta de Sombras Brillantes" data-precio="40">
+    <img src="sombras.jpg" alt="Paleta de Sombras Brillantes">
+    <strong>Paleta de Sombras Brillantes</strong>
+    <p>12 tonos intensos para crear looks únicos, desde natural hasta glam.</p>
+    <a class="whatsapp">Agregar al carrito</a>
   </div>
 
-  <!-- Botones de contacto generales -->
-  <div class="contact-buttons">
-    <a href="https://wa.me/51935923064" target="_blank" class="whatsapp">WhatsApp</a>
-    <a href="https://instagram.com/tu_usuario" target="_blank" class="instagram">Instagram</a>
+  <div class="producto bases" data-nombre="Base Líquida Natural" data-precio="35">
+    <img src="base.jpg" alt="Base Líquida Natural">
+    <strong>Base Líquida Natural</strong>
+    <p>Textura ligera que cubre imperfecciones y unifica el tono de piel.</p>
+    <a class="whatsapp">Agregar al carrito</a>
   </div>
+</div>
 
-  <footer>
-    © 2026 Catálogo de Maquillaje. Todos los derechos reservados.
-  </footer>
+<div class="contact-buttons">
+  <a href="https://wa.me/51935923064" target="_blank" class="whatsapp">WhatsApp</a>
+  <a href="https://instagram.com/tu_usuario" target="_blank" class="instagram">Instagram</a>
+</div>
 
-  <!-- JavaScript -->
-  <script>
-    const botones = document.querySelectorAll('.categoria');
-    const productos = document.querySelectorAll('.producto');
-    const whatsappBtns = document.querySelectorAll('.producto .whatsapp');
+<footer>
+  © 2026 Catálogo de Maquillaje. Todos los derechos reservados.
+</footer>
 
-    // Filtrar productos por categoría
-    botones.forEach(boton => {
-      boton.addEventListener('click', () => {
-        const categoria = boton.getAttribute('data-categoria');
-        productos.forEach(producto => {
-          if (categoria === 'todas') {
-            producto.style.display = 'block';
-          } else {
-            producto.style.display = producto.classList.contains(categoria) ? 'block' : 'none';
-          }
-        });
+<!-- Carrito flotante -->
+<div id="carrito">
+  <h3>Tu carrito</h3>
+  <ul></ul>
+  <div class="total"></div>
+  <button id="enviarWhatsApp">Enviar a WhatsApp</button>
+</div>
+
+<script>
+  const botonesCategoria = document.querySelectorAll('.categoria');
+  const productos = document.querySelectorAll('.producto');
+  const carritoDiv = document.getElementById('carrito');
+  const listaCarrito = carritoDiv.querySelector('ul');
+  const totalDiv = carritoDiv.querySelector('.total');
+  const enviarBtn = document.getElementById('enviarWhatsApp');
+
+  let carrito = [];
+
+  // Filtrar por categoría
+  botonesCategoria.forEach(boton => {
+    boton.addEventListener('click', () => {
+      const cat = boton.dataset.categoria;
+      productos.forEach(p => {
+        p.style.display = (cat === 'todas' || p.classList.contains(cat)) ? 'block' : 'none';
       });
     });
+  });
 
-    // Animación de aparición
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1 });
-
-    productos.forEach(p => observer.observe(p));
-
-    // WhatsApp dinámico
-    whatsappBtns.forEach(btn => {
-      btn.addEventListener('click', e => {
-        const producto = e.target.closest('.producto');
-        const nombre = producto.dataset.nombre;
-        btn.href = `https://wa.me/51935923064?text=Hola,%20quiero%20comprar%20${encodeURIComponent(nombre)}`;
-      });
+  // Animación de aparición
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('visible');
     });
-  </script>
+  }, { threshold: 0.1 });
+
+  productos.forEach(p => observer.observe(p));
+
+  // Agregar al carrito
+  document.querySelectorAll('.producto .whatsapp').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const producto = btn.closest('.producto');
+      const nombre = producto.dataset.nombre;
+      const precio = parseFloat(producto.dataset.precio);
+      carrito.push({nombre, precio});
+      actualizarCarrito();
+    });
+  });
+
+  function actualizarCarrito() {
+    listaCarrito.innerHTML = '';
+    let total = 0;
+    carrito.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.nombre} - S/ ${item.precio.toFixed(2)}`;
+      listaCarrito.appendChild(li);
+      total += item.precio;
+    });
+    totalDiv.textContent = `Total: S/ ${total.toFixed(2)}`;
+    carritoDiv.style.display = carrito.length ? 'flex' : 'none';
+  }
+
+  // Enviar carrito completo a WhatsApp
+  enviarBtn.addEventListener('click', () => {
+    if(carrito.length === 0) return;
+    let mensaje = 'Hola, quiero comprar:\n';
+    carrito.forEach(item => {
+      mensaje += `- ${item.nombre} (S/ ${item.precio.toFixed(2)})\n`;
+    });
+    let total = carrito.reduce((acc, item) => acc + item.precio, 0);
+    mensaje += `Total: S/ ${total.toFixed(2)}`;
+    window.open(`https://wa.me/51935923064?text=${encodeURIComponent(mensaje)}`, '_blank');
+  });
+</script>
 
 </body>
 </html>
-

@@ -27,6 +27,7 @@
 <!-- Productos -->
 <div class="productos">
   <div class="producto labiales" data-nombre="Labial Líquido Nude" data-precio="25">
+    <div class="badge">Nuevo</div>
     <img src="labial.jpg" alt="Labial Líquido Nude">
     <strong>Labial Líquido Nude</strong>
     <p>Acabado mate, color duradero y suave para todos los tonos de piel.</p>
@@ -36,6 +37,7 @@
   </div>
 
   <div class="producto sombras" data-nombre="Paleta de Sombras Brillantes" data-precio="40">
+    <div class="badge">Oferta</div>
     <img src="sombras.jpg" alt="Paleta de Sombras Brillantes">
     <strong>Paleta de Sombras Brillantes</strong>
     <p>12 tonos intensos para crear looks únicos, desde natural hasta glam.</p>
@@ -60,7 +62,6 @@
   <a href="https://instagram.com/tu_usuario" target="_blank" class="instagram">Instagram</a>
 </div>
 
-<!-- Footer -->
 <footer>
   © 2026 Ivari Style. Todos los derechos reservados.
 </footer>
@@ -77,7 +78,6 @@
 <!-- Notificación -->
 <div id="notificacion">Producto agregado</div>
 
-<!-- Scripts -->
 <script>
   const botonesCategoria = document.querySelectorAll('.categoria');
   const productos = document.querySelectorAll('.producto');
@@ -89,7 +89,6 @@
 
   let carrito = [];
 
-  // FILTRO POR CATEGORÍA
   botonesCategoria.forEach(boton => {
     boton.addEventListener('click', () => {
       botonesCategoria.forEach(b => b.classList.remove('active'));
@@ -102,7 +101,6 @@
     });
   });
 
-  // ANIMACIÓN DE APARICIÓN
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if(entry.isIntersecting) entry.target.classList.add('visible');
@@ -114,7 +112,6 @@
     p.style.transitionDelay = `${i * 0.1}s`;
   });
 
-  // AGREGAR AL CARRITO
   document.querySelectorAll('.producto .whatsapp').forEach(btn => {
     btn.addEventListener('click', () => {
       const producto = btn.closest('.producto');

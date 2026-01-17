@@ -7,7 +7,6 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
 
@@ -17,6 +16,7 @@
   <p>Descubre nuestros productos para resaltar tu belleza</p>
 </header>
 
+<!-- Categorías -->
 <div class="categorias">
   <div class="categoria active" data-categoria="todas">Todas</div>
   <div class="categoria" data-categoria="labiales">Labiales</div>
@@ -24,39 +24,48 @@
   <div class="categoria" data-categoria="bases">Bases</div>
 </div>
 
+<!-- Productos -->
 <div class="productos">
   <div class="producto labiales" data-nombre="Labial Líquido Nude" data-precio="25">
     <img src="labial.jpg" alt="Labial Líquido Nude">
     <strong>Labial Líquido Nude</strong>
     <p>Acabado mate, color duradero y suave para todos los tonos de piel.</p>
-    <a class="whatsapp"><img src="whatsapp-icon.png" style="width:20px;margin-right:5px;">Agregar al carrito</a>
+    <a class="whatsapp">
+      <img src="whatsapp-icon.png" style="width:20px;margin-right:5px;">Agregar al carrito
+    </a>
   </div>
 
   <div class="producto sombras" data-nombre="Paleta de Sombras Brillantes" data-precio="40">
     <img src="sombras.jpg" alt="Paleta de Sombras Brillantes">
     <strong>Paleta de Sombras Brillantes</strong>
     <p>12 tonos intensos para crear looks únicos, desde natural hasta glam.</p>
-    <a class="whatsapp"><img src="whatsapp-icon.png" style="width:20px;margin-right:5px;">Agregar al carrito</a>
+    <a class="whatsapp">
+      <img src="whatsapp-icon.png" style="width:20px;margin-right:5px;">Agregar al carrito
+    </a>
   </div>
 
   <div class="producto bases" data-nombre="Base Líquida Natural" data-precio="35">
     <img src="base.jpg" alt="Base Líquida Natural">
     <strong>Base Líquida Natural</strong>
     <p>Textura ligera que cubre imperfecciones y unifica el tono de piel.</p>
-    <a class="whatsapp"><img src="whatsapp-icon.png" style="width:20px;margin-right:5px;">Agregar al carrito</a>
+    <a class="whatsapp">
+      <img src="whatsapp-icon.png" style="width:20px;margin-right:5px;">Agregar al carrito
+    </a>
   </div>
 </div>
 
+<!-- Botones de contacto -->
 <div class="contact-buttons">
   <a href="https://wa.me/51935923064" target="_blank" class="whatsapp">WhatsApp</a>
   <a href="https://instagram.com/tu_usuario" target="_blank" class="instagram">Instagram</a>
 </div>
 
+<!-- Footer -->
 <footer>
   © 2026 Ivari Style. Todos los derechos reservados.
 </footer>
 
-<!-- CARRITO FLOTANTE -->
+<!-- Carrito flotante -->
 <div id="carrito">
   <h3>Tu carrito</h3>
   <ul></ul>
@@ -65,9 +74,10 @@
   <button id="enviarWhatsApp">Enviar a WhatsApp</button>
 </div>
 
-<!-- NOTIFICACIÓN -->
+<!-- Notificación -->
 <div id="notificacion">Producto agregado</div>
 
+<!-- Scripts -->
 <script>
   const botonesCategoria = document.querySelectorAll('.categoria');
   const productos = document.querySelectorAll('.producto');
@@ -79,12 +89,11 @@
 
   let carrito = [];
 
-  // FILTRO POR CATEGORÍA CON ACTIVE
+  // FILTRO POR CATEGORÍA
   botonesCategoria.forEach(boton => {
     boton.addEventListener('click', () => {
-      // Remover clase active de todos
+      // Quitar active de todos
       botonesCategoria.forEach(b => b.classList.remove('active'));
-      // Agregar active al que se clickeó
       boton.classList.add('active');
 
       const cat = boton.dataset.categoria;
@@ -155,7 +164,7 @@
     });
   }
 
-  // NOTIFICACIÓN AGREGADO
+  // NOTIFICACIÓN
   function mostrarNotificacion(){
     notificacion.style.display = 'block';
     setTimeout(()=>{notificacion.style.display='none'},1500);

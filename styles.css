@@ -5,34 +5,30 @@ body {
   background: linear-gradient(135deg, #ffe6f0, #fff0e6);
   color: #4a3c31;
   overflow-x: hidden;
-  transition: background 0.5s ease;
 }
 
-/* Header con animación */
+/* Header fashion */
 header {
-  background: linear-gradient(135deg, #d94f85, #c71585);
+  background: linear-gradient(135deg, #ff8ac9, #c71585);
   color: white;
   text-align: center;
-  padding: 2.5rem 1rem;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  animation: headerSlide 1s ease;
-}
-@keyframes headerSlide {
-  0% { transform: translateY(-50px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+  padding: 3rem 1rem;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0 5px 25px rgba(199,21,133,0.4);
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 800;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
 }
 
 header p {
   margin: 5px 0 0 0;
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 /* Categorías */
@@ -50,16 +46,15 @@ header p {
   border-radius: 50px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-.categoria.active, .categoria:hover {
-  transform: scale(1.1);
-  background-color: #d94f85;
-  color: white;
-  box-shadow: 0 5px 20px rgba(217,79,133,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Productos */
+.categoria:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(217,79,133,0.3);
+}
+
+/* Productos fashion */
 .productos {
   display: flex;
   flex-wrap: wrap;
@@ -69,35 +64,36 @@ header p {
 }
 
 .producto {
-  position: relative;
   background: linear-gradient(145deg, #fff0f3, #ffe6ef);
-  border-radius: 15px;
+  border-radius: 20px;
   padding: 1.5rem;
-  width: 220px;
-  box-shadow: 0 10px 25px rgba(199, 21, 133, 0.2);
+  width: 230px;
+  box-shadow: 0 15px 30px rgba(199,21,133,0.3);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s ease;
+  position: relative;
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(40px) scale(0.95);
 }
 
 .producto.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .producto:hover {
   transform: translateY(-10px) scale(1.07);
-  box-shadow: 0 20px 40px rgba(199, 21, 133, 0.35);
+  box-shadow: 0 20px 40px rgba(199,21,133,0.4);
 }
 
 .producto img {
   width: 100%;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
+  border-radius: 15px;
+  transition: all 0.4s ease;
 }
+
 .producto:hover img {
-  transform: scale(1.15) rotate(-2deg);
+  transform: scale(1.15) rotate(2deg);
 }
 
 .producto strong {
@@ -113,21 +109,7 @@ header p {
   margin: 0;
 }
 
-/* Badge */
-.badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #ff416c;
-  color: white;
-  padding: 5px 10px;
-  font-size: 0.75rem;
-  font-weight: bold;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-}
-
-/* Botón de WhatsApp */
+/* Botones WhatsApp e Instagram */
 a.whatsapp {
   background-color: #25D366;
   color: white;
@@ -141,16 +123,17 @@ a.whatsapp {
   transition: all 0.3s ease;
   cursor: pointer;
 }
+
 a.whatsapp:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(37,211,102,0.7);
 }
 
-/* Contact buttons */
 .contact-buttons {
   text-align: center;
   margin: 60px 0 40px 0;
 }
+
 .contact-buttons a {
   padding: 12px 25px;
   border-radius: 50px;
@@ -161,14 +144,21 @@ a.whatsapp:hover {
   display: inline-block;
   transition: all 0.3s ease;
 }
+
 .contact-buttons a:hover {
-  transform: scale(1.1) rotate(-2deg);
-}
-.instagram {
-  background-color: #E1306C;
+  transform: scale(1.1);
 }
 
-/* Footer */
+.instagram {
+  background-color: #E1306C;
+  box-shadow: 0 5px 15px rgba(225,48,108,0.3);
+}
+
+.instagram:hover {
+  box-shadow: 0 0 20px rgba(225,48,108,0.7);
+}
+
+/* Footer fashion */
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -188,24 +178,60 @@ footer {
   max-height: 400px;
   background: white;
   border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(199, 21, 133, 0.3);
+  box-shadow: 0 10px 25px rgba(199,21,133,0.3);
   overflow-y: auto;
   padding: 15px;
   display: none;
   flex-direction: column;
   z-index: 999;
 }
-#carrito h3 { margin-top:0; text-align:center; color:#d94f85; }
-#carrito ul { list-style:none; padding:0; margin:0; }
-#carrito li { display:flex; justify-content:space-between; margin:10px 0; }
-#carrito .total { font-weight:bold; text-align:right; margin-top:10px; color:#d94f85; }
-#carrito button { margin-top:10px; background-color:#25D366; color:white; padding:10px; border:none; border-radius:50px; cursor:pointer; font-weight:600; width:100%; transition:all 0.3s ease; }
-#carrito button:hover { transform:translateY(-2px); box-shadow:0 5px 15px rgba(0,0,0,0.3); }
+
+#carrito h3 {
+  margin-top: 0;
+  text-align: center;
+  color: #d94f85;
+}
+
+#carrito ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#carrito li {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+#carrito .total {
+  font-weight: bold;
+  text-align: right;
+  margin-top: 10px;
+  color: #d94f85;
+}
+
+#carrito button {
+  margin-top: 10px;
+  background-color: #25D366;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+#carrito button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
 
 /* Responsive */
 @media(max-width:480px){
-  header h1{font-size:1.8rem;}
+  header h1{font-size:2rem;}
   header p{font-size:1rem;}
-  #carrito {width:90%;}
-  .producto {width:45%;}
+  #carrito {width: 90%;}
 }
